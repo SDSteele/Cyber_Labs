@@ -1,2 +1,8 @@
-# On-Going-Projects
-A place to store my on-going projects and work bullets
+# Cybersecurity Labs Portfolio
+A collection of hands-on cybersecurity projects I've built in my home lab.  
+This repo documents my journey in pentesting, network scanning, and exploit development.  
+
+## Projects
+- [Nmap Scans](./nmap) → Recon of local lab machines with different scan types.
+- [Metasploit Exploits](./metasploit) → Sample exploitation and privilege escalation.
+- [Reports](./reports) → Formal writeups formatted like professional pentest reports.
