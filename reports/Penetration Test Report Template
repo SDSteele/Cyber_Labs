@@ -1,0 +1,89 @@
+Penetration Test Report Template
+
+Author: Shannon Steele
+Date: YYYY-MM-DD
+Target: (VM name, IP, or system)
+Lab Environment: (Home lab, VM, isolated test network)
+
+1. Executive Summary
+
+Plain-language summary of what you did and what you found.
+
+Target system was scanned and tested for vulnerabilities.
+
+Several open ports and outdated services were identified.
+
+One critical vulnerability was successfully exploited.
+
+This section is for non-technical readers (like managers).
+
+2. Scope
+
+Target IP(s): xxx.xxx.xxx.xxx
+
+Tools Used: (e.g., Nmap, Metasploit, Nikto, Hydra, Burp Suite)
+
+Testing Window: (date/time)
+
+Rules of Engagement: (lab only, no production systems)
+
+3. Methodology
+
+Step-by-step phases of your test.
+
+Reconnaissance: Used Nmap to identify open ports and services.
+
+Scanning & Enumeration: Identified software versions, possible vulnerabilities.
+
+Exploitation: Attempted to exploit MS08-067 SMB vulnerability with Metasploit.
+
+Post-Exploitation: Verified access and privilege escalation.
+
+Reporting: Documented findings.
+
+4. Findings
+🔴 High Risk
+
+Vulnerability: MS08-067 SMB Remote Code Execution
+
+Impact: Remote attacker can gain full system access.
+
+Evidence: Exploited via Metasploit, obtained shell.
+
+Recommendation: Apply Microsoft patch KB958644 or disable vulnerable service.
+
+🟠 Medium Risk
+
+Vulnerability: Anonymous FTP login
+
+Impact: Unauthenticated access to FTP directories.
+
+Recommendation: Disable anonymous login or restrict via firewall.
+
+🟢 Low Risk
+
+Vulnerability: Outdated Apache HTTPD version
+
+Impact: May be vulnerable to known exploits.
+
+Recommendation: Update to latest stable version.
+
+5. Screenshots / Evidence
+
+(Insert screenshots or output snippets here — nmap results, Metasploit shell, etc.)
+
+6. Conclusion
+
+The target VM was successfully compromised.
+
+This demonstrates the importance of patching and service hardening.
+
+Further testing should include web application analysis and privilege escalation.
+
+7. Appendix
+
+Command Log: Include key commands used.
+
+Tool Configs: Any special settings.
+
+References: CVE numbers, advisories, documentation links.
