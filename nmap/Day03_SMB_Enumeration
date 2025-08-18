@@ -1,0 +1,30 @@
+# Day 3 – SMB Enumeration
+
+## Target
+- Host: 192.168.0.128 (Metasploitable2)
+- Toolset: Nmap, smbclient, enum4linux, smbmap  
+
+
+## Commands Used
+- nmap -p 139,445 --script smb-os-discovery 192.168.0.128
+- smbclient -L \\192.168.0.128 -N
+- enum4linux -a 192.168.0.128
+- smbmap -H 192.168.0.128
+
+## Results
+- Shares discovered:
+  - IPC$ → Null session allowed
+  - tmp → Writable share
+  - (etc. — fill this in once you run it)
+
+
+## Observations
+- Writable shares may allow file upload or privilege escalation.
+- User/group info may be harvested via enum4linux.
+
+## Takeaways
+- System has risk of privilege escalation, information is disclosed such as user names, and certain software is exploitable.
+
+## Next Steps
+- Attempt file upload/download in writable shares.
+- Consider password brute-forcing with Hydra/Medusa (later module).
