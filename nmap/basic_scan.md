@@ -1,9 +1,10 @@
-# Nmap Basic Scan
+# Nmap Basic Scan – Metasploitable VM
 
 **Date:** 2025-08-17  
-**Target:** Metasploitable VM (1192.168.0.128)  
-**Objective:** Identify open ports and services.
-
+**Attacker Machine:** Kali Linux VM  
+**Target Machine:** Metasploitable VM  
+**Target IP:** 192.186.0.128  
+**Objective:** Perform a basic SYN scan to identify open ports and services.
 ---
 
 ## 🔍 Command Used
