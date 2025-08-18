@@ -1,0 +1,71 @@
+# Task 3 – SMB Enumeration
+
+## Target
+Target: 192.168.0.128 (Metasploitable2 VM)
+Focus: Service Enumeration (SMB – Ports 139, 445)
+Toolset: Nmap, smbclient, enum4linux, smbmap  
+
+
+## Commands Used
+
+1. Nmap SMB Script
+nmap -p 139,445 --script smb-os-discovery 192.168.0.128
+
+Findings:
+
+Detected Samba service running on target
+
+Reported OS and domain/workgroup info
+
+Confirmed SMB version
+
+2. smbclient (Anonymous Listing)
+smbclient -L \\192.168.0.128 -N
+
+Findings:
+
+Able to list available SMB shares without authentication
+
+Shares identified included:
+
+tmp (read/write access possible)
+
+IPC$ (inter-process communication)
+
+Anonymous access suggests misconfiguration
+
+3. enum4linux
+enum4linux -a 192.168.0.128
+
+Findings:
+
+Enumerated users and groups on the system
+
+Confirmed shares from smbclient
+
+Extracted additional details (NetBIOS name, OS info, possible policies)
+
+Valuable for building a user list → potential brute force
+
+4. smbmap
+smbmap -H 192.168.0.128
+
+Findings:
+
+Displayed share permissions
+
+Confirmed tmp share is world-writable
+
+Demonstrates possible file upload → privilege escalation / remote code execution path
+
+
+## Observations
+- Writable shares may allow file upload or privilege escalation.
+- User/group info may be harvested via enum4linux.
+
+## Takeaways
+- System has risk of privilege escalation, information is disclosed such as user names, and certain software is exploitable.
+
+## Next Steps
+- Attempt file upload/download in writable shares.
+- Consider password brute-forcing with Hydra/Medusa (later module).
