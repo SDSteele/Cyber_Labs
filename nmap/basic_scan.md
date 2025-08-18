@@ -7,7 +7,7 @@
 **Objective:** Perform a basic SYN scan to identify open ports and services.
 ---
 
-## 🔍 Command Used
+## Command Used
 nmap/zenmap
 nmap -sS -Pn 192.168.0.128
 
