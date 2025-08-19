@@ -6,7 +6,7 @@ This repo documents my journey in pentesting, network scanning, and exploit deve
 - [Nmap Scans](./nmap) → Recon of local lab machines with different scan types.
 - [Metasploit Exploits](./metasploit) → Sample exploitation and privilege escalation.
 - [Reports](./reports) → Formal writeups formatted like professional pentest reports.
-- [Python Scripts](./python) → Python scripts
+- [Scripts](./custom%20security%20scripts) → Custom Security Scripts
 - [Notes](./notes) → My personal cheat sheets and quick references.
 
 ## Goals
